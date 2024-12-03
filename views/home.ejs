@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <div id="nav">
+        <h1>Welcome <%=name%></h1>
+        <h2>Let's Be fulfilled today</h2>
+    </div>
+    <a href="" id="logout">logout</a>
+    <div id="container">
+        <div id="main">
+        <form action="/task" method="post">
+            <input type="text" name="task">
+            <button>ADD TASK</button>
+        </form>
+        <p id="status"> Undone tasks</p>
+        <div id="tasks">
+            <%result.forEach((task) => { %>
+               <div class="EachTask">
+                <p class="task"><%=task.task %></p> 
+                <p><%=task.Date%></p> 
+                <%if(task.status == 1){%>
+                    <input type="checkbox" id="<%=task.task_id%>" class="radio" checked>
+                <%}else{%>
+                    <input type="checkbox" id="<%=task.task_id%>" class="radio">
+                    <%}%>
+            </div>
+           <% }) %>
+        </div>
+    </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

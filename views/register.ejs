@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<link rel="stylesheet" href="reglog.css">
+<body>
+    <div id="body">
+    <form action="/authRegister" method="post">
+        <h1>REGISTER</h1>
+        <p id="err"><%=message%></p>
+        <p id="sus"><%=success%></p>
+        <input type="text" name="username" id="username" placeholder="Username">
+        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="password" name="password" id="password" placeholder="Password">
+        <button type="submit">Register</button>
+        <div id="jj"><a href="/login">Login</a></div>
+    </form>
+    </div>
+    <script>
+        let err = document.querySelector("#err")
+        if(err.textContent == null || err.textContent == ""){
+            err.style.display = "none"
+            console.log()
+        }
+        else{
+            err.style.display = "block"           
+        }
+        let sus = document.querySelector("#sus")
+        if(sus.textContent == null || sus.textContent == ""){
+            sus.style.display = "none"
+        }
+        else{
+            sus.style.display = "block"           
+        }
+    </script>
+</body>
+</html>
